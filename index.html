@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amani Abdulqader — Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green: #1B4332;
+    --green-mid: #2D6A4F;
+    --green-light: #40916C;
+    --sand: #F7F3EC;
+    --sand-dark: #EDE8DF;
+    --gold: #B5893A;
+    --gold-light: #D4A855;
+    --text: #1A1A18;
+    --text-muted: #6B6B5E;
+    --white: #FFFFFF;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--sand);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1.2rem 4rem;
+    background: rgba(247, 243, 236, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(27, 67, 50, 0.1);
+  }
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--green);
+  }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a {
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--green); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 80px;
+  }
+  .hero-left {
+    background: var(--green);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 6rem 5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-left::before {
+    content: '';
+    position: absolute;
+    top: -100px; right: -100px;
+    width: 400px; height: 400px;
+    border-radius: 50%;
+    background: rgba(64, 145, 108, 0.15);
+  }
+  .hero-left::after {
+    content: '';
+    position: absolute;
+    bottom: -60px; left: -60px;
+    width: 250px; height: 250px;
+    border-radius: 50%;
+    background: rgba(181, 137, 58, 0.1);
+  }
+  .hero-tag {
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 1.5rem;
+  }
+  .hero-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3rem, 5vw, 5rem);
+    font-weight: 300;
+    line-height: 1.05;
+    color: var(--white);
+    margin-bottom: 0.3rem;
+  }
+  .hero-name em {
+    font-style: italic;
+    color: var(--gold-light);
+  }
+  .hero-title {
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+  }
+  .hero-desc {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: rgba(255,255,255,0.75);
+    max-width: 420px;
+    margin-bottom: 3rem;
+    font-weight: 300;
+  }
+  .hero-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    background: var(--gold);
+    color: var(--white);
+    padding: 0.9rem 2rem;
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .hero-cta:hover { background: var(--gold-light); transform: translateY(-2px); }
+  .hero-cta-arrow { font-size: 1rem; }
+
+  .hero-right {
+    background: var(--sand-dark);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 4rem;
+    gap: 0;
+  }
+  .hero-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: rgba(27,67,50,0.1);
+    border: 1px solid rgba(27,67,50,0.1);
+    margin-bottom: 3rem;
+  }
+  .stat {
+    background: var(--sand);
+    padding: 2rem 1.5rem;
+  }
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.8rem;
+    font-weight: 300;
+    color: var(--green);
+    line-height: 1;
+    margin-bottom: 0.3rem;
+  }
+  .stat-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+  .hero-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+  .contact-item {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    display: flex;
+    gap: 0.8rem;
+    align-items: center;
+  }
+  .contact-item a { color: var(--green-mid); text-decoration: none; }
+  .contact-item a:hover { text-decoration: underline; }
+  .contact-dot {
+    width: 4px; height: 4px;
+    border-radius: 50%;
+    background: var(--gold);
+    flex-shrink: 0;
+  }
+
+  /* SECTIONS */
+  section { padding: 6rem 8rem; }
+  .section-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.8rem;
+  }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 300;
+    color: var(--green);
+    line-height: 1.2;
+    margin-bottom: 3rem;
+  }
+
+  /* ABOUT */
+  .about { background: var(--white); }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: start;
+  }
+  .about-text p {
+    font-size: 1rem;
+    line-height: 1.9;
+    color: var(--text-muted);
+    margin-bottom: 1.2rem;
+    font-weight: 300;
+  }
+  .about-text p strong { color: var(--text); font-weight: 500; }
+  .about-pillars {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .pillar {
+    border-left: 2px solid var(--green-light);
+    padding: 1rem 1.5rem;
+    background: var(--sand);
+  }
+  .pillar-title {
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: 0.4rem;
+    font-weight: 500;
+  }
+  .pillar-desc {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  /* EXPERIENCE */
+  .experience { background: var(--sand); }
+  .exp-timeline { display: flex; flex-direction: column; gap: 0; }
+  .exp-item {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 3rem;
+    padding: 2.5rem 0;
+    border-bottom: 1px solid rgba(27,67,50,0.1);
+    position: relative;
+  }
+  .exp-item:last-child { border-bottom: none; }
+  .exp-meta { padding-top: 0.2rem; }
+  .exp-dates {
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+  }
+  .exp-org {
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--green);
+    margin-bottom: 0.2rem;
+  }
+  .exp-location {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+  }
+  .exp-content {}
+  .exp-role {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--text);
+    margin-bottom: 0.8rem;
+    line-height: 1.3;
+  }
+  .exp-type {
+    display: inline-block;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    background: rgba(27,67,50,0.08);
+    color: var(--green);
+    padding: 0.2rem 0.7rem;
+    margin-bottom: 1rem;
+  }
+  .exp-desc {
+    font-size: 0.88rem;
+    line-height: 1.75;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+    font-weight: 300;
+  }
+  .exp-bullets { list-style: none; display: flex; flex-direction: column; gap: 0.4rem; }
+  .exp-bullets li {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    display: flex;
+    gap: 0.8rem;
+    line-height: 1.6;
+  }
+  .exp-bullets li::before {
+    content: '—';
+    color: var(--gold);
+    flex-shrink: 0;
+    font-size: 0.75rem;
+    margin-top: 0.15rem;
+  }
+
+  /* FEATURED PROJECT */
+  .projects { background: var(--green); }
+  .projects .section-label { color: var(--gold-light); }
+  .projects .section-title { color: var(--white); }
+  .projects-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    background: rgba(255,255,255,0.05);
+  }
+  .project-card {
+    background: rgba(255,255,255,0.04);
+    padding: 3rem;
+    transition: background 0.2s;
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+  .project-card:hover { background: rgba(255,255,255,0.08); }
+  .project-tag {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 1rem;
+  }
+  .project-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--white);
+    line-height: 1.3;
+    margin-bottom: 1rem;
+  }
+  .project-desc {
+    font-size: 0.85rem;
+    line-height: 1.75;
+    color: rgba(255,255,255,0.55);
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+  }
+  .project-org {
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.3);
+  }
+  .project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    text-decoration: none;
+    margin-top: 1rem;
+  }
+  .project-link:hover { color: var(--white); }
+
+  /* EDUCATION */
+  .education { background: var(--white); }
+  .edu-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    background: rgba(27,67,50,0.06);
+  }
+  .edu-card {
+    background: var(--white);
+    padding: 2.5rem 2rem;
+  }
+  .edu-year {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+  }
+  .edu-institution {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: var(--green);
+    margin-bottom: 0.4rem;
+    line-height: 1.3;
+  }
+  .edu-degree {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 0.8rem;
+  }
+  .edu-note {
+    font-size: 0.75rem;
+    color: var(--gold);
+    font-style: italic;
+  }
+
+  /* SKILLS */
+  .skills { background: var(--sand); }
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+  }
+  .skill-group {}
+  .skill-group-title {
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--green);
+    font-weight: 500;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(27,67,50,0.15);
+  }
+  .skill-list { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+  .skill-list li {
+    font-size: 0.83rem;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .skill-list li::before {
+    content: '';
+    width: 3px; height: 3px;
+    border-radius: 50%;
+    background: var(--gold);
+    flex-shrink: 0;
+  }
+
+  /* LANGUAGES */
+  .lang-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+  .lang-card {
+    background: var(--white);
+    padding: 1.5rem;
+    border-bottom: 2px solid var(--green-light);
+  }
+  .lang-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--green);
+    margin-bottom: 0.3rem;
+  }
+  .lang-level {
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  /* RECOMMENDATIONS */
+  .recommendations { background: var(--green); padding: 6rem 8rem; }
+  .recommendations .section-label { color: var(--gold-light); }
+  .recommendations .section-title { color: var(--white); }
+  .rec-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+  .rec-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 2.5rem;
+  }
+  .rec-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    font-style: italic;
+    line-height: 1.8;
+    color: rgba(255,255,255,0.8);
+    margin-bottom: 1.5rem;
+  }
+  .rec-quote::before { content: '"'; color: var(--gold-light); font-size: 1.5rem; }
+  .rec-quote::after { content: '"'; color: var(--gold-light); font-size: 1.5rem; }
+  .rec-author {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--gold-light);
+    letter-spacing: 0.05em;
+  }
+  .rec-role {
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.4);
+    margin-top: 0.2rem;
+  }
+
+  /* CERTIFICATIONS */
+  .certifications { background: var(--sand-dark); }
+  .cert-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: rgba(27,67,50,0.08);
+  }
+  .cert-card {
+    background: var(--sand);
+    padding: 1.5rem 2rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .cert-icon {
+    width: 32px; height: 32px;
+    background: var(--green);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.1rem;
+  }
+  .cert-icon::after {
+    content: '✓';
+    color: var(--white);
+    font-size: 0.75rem;
+  }
+  .cert-name {
+    font-size: 0.85rem;
+    color: var(--text);
+    line-height: 1.4;
+    font-weight: 400;
+  }
+  .cert-issuer {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    margin-top: 0.2rem;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--text);
+    padding: 4rem 8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    font-weight: 300;
+    color: var(--white);
+    letter-spacing: 0.05em;
+  }
+  .footer-links { display: flex; gap: 2rem; }
+  .footer-links a {
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--gold-light); }
+  .footer-copy {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.2);
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .hero-left > * { animation: fadeUp 0.7s ease forwards; opacity: 0; }
+  .hero-tag { animation-delay: 0.1s; }
+  .hero-name { animation-delay: 0.2s; }
+  .hero-title { animation-delay: 0.3s; }
+  .hero-desc { animation-delay: 0.4s; }
+  .hero-cta { animation-delay: 0.5s; }
+
+  @media (max-width: 900px) {
+    nav { padding: 1rem 2rem; }
+    .nav-links { display: none; }
+    .hero { grid-template-columns: 1fr; }
+    .hero-left { padding: 4rem 2rem; }
+    .hero-right { padding: 2rem; }
+    section { padding: 4rem 2rem; }
+    .about-grid, .projects-grid, .rec-grid { grid-template-columns: 1fr; }
+    .edu-grid, .skills-grid, .lang-grid, .cert-grid { grid-template-columns: 1fr 1fr; }
+    .exp-item { grid-template-columns: 1fr; gap: 0.5rem; }
+    footer { flex-direction: column; gap: 1.5rem; text-align: center; padding: 3rem 2rem; }
+    .recommendations { padding: 4rem 2rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Amani Abdulqader</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" style="padding:0; padding-top:80px;">
+  <div class="hero-left">
+    <p class="hero-tag">Sustainability · ESG · International Development</p>
+    <h1 class="hero-name">Amani<br><em>Abdulqader</em></h1>
+    <p class="hero-title">ESG & Sustainability Analyst &nbsp;·&nbsp; Operations & Project Coordination</p>
+    <p class="hero-desc">International development professional with a track record across the UN system, global NGOs, sustainability research institutions, and the private sector. Currently at Inter IKEA Group, completing an MSc at Stockholm University.</p>
+    <a href="mailto:amaniqader@hotmail.com" class="hero-cta">Get in touch <span class="hero-cta-arrow">→</span></a>
+  </div>
+  <div class="hero-right">
+    <div class="hero-stats">
+      <div class="stat"><div class="stat-num">2+</div><div class="stat-label">Years of Experience</div></div>
+      <div class="stat"><div class="stat-num">18</div><div class="stat-label">Countries Coordinated</div></div>
+      <div class="stat"><div class="stat-num">4</div><div class="stat-label">Universities, 4 Countries</div></div>
+      <div class="stat"><div class="stat-num">2</div><div class="stat-label">Native / Fluent Languages</div></div>
+    </div>
+    <div class="hero-contact" id="contact">
+      <div class="contact-item"><span class="contact-dot"></span>+46 73 640 7589</div>
+      <div class="contact-item"><span class="contact-dot"></span><a href="mailto:amaniqader@hotmail.com">amaniqader@hotmail.com</a></div>
+      <div class="contact-item"><span class="contact-dot"></span><a href="https://linkedin.com/in/amaniqader" target="_blank">linkedin.com/in/amaniqader</a></div>
+      <div class="contact-item"><span class="contact-dot"></span>Malmö, Sweden · Open to relocation</div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <p class="section-label">Profile</p>
+  <h2 class="section-title">Bridging analysis,<br>impact & delivery</h2>
+  <div class="about-grid">
+    <div class="about-text">
+      <p>I am a sustainability and international development professional who has spent the last five years working at the intersection of <strong>policy, data and operational delivery</strong> — across the United Nations, humanitarian NGOs, sustainability research, and now the corporate sector.</p>
+      <p>My work is defined by a consistent thread: taking complex challenges and translating them into concrete, coordinated action. Whether designing surveys for 190+ respondents at the Stockholm Environment Institute, supporting a 18-country strategy rollout at UNMAS, or building stakeholder engagement programmes at Inter IKEA Group, I bring both analytical rigour and practical execution.</p>
+      <p>I hold a <strong>BSc in Development Studies from Lund University</strong> (Grade A thesis) and am completing an <strong>MSc in Globalization, Environment and Social Change at Stockholm University</strong>, with a semester at Ludwig Maximilian University of Munich.</p>
+    </div>
+    <div class="about-pillars">
+      <div class="pillar">
+        <div class="pillar-title">ESG & Sustainability</div>
+        <div class="pillar-desc">Deep academic and professional grounding in ESG analysis, CSRD compliance, sustainable finance, and climate governance — applied across research and corporate settings.</div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-title">International Operations</div>
+        <div class="pillar-desc">Proven ability to coordinate complex, multi-stakeholder initiatives across cultures, time zones and institutional contexts — from the UN to the private sector.</div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-title">Research & Analysis</div>
+        <div class="pillar-desc">Experienced in survey design, policy analysis, stakeholder mapping, and translating findings into clear, actionable insights for decision-makers.</div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-title">Communication & Engagement</div>
+        <div class="pillar-desc">Native English and Arabic. Skilled in executive-level reporting, stakeholder engagement, and cross-cultural communication across diverse global environments.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="experience" id="experience">
+  <p class="section-label">Career</p>
+  <h2 class="section-title">Professional<br>Experience</h2>
+  <div class="exp-timeline">
+
+    <div class="exp-item">
+      <div class="exp-meta">
+        <div class="exp-dates">Mar 2026 – Present</div>
+        <div class="exp-org">Inter IKEA Group</div>
+        <div class="exp-location">Malmö, Sweden</div>
+      </div>
+      <div class="exp-content">
+        <div class="exp-type">Internship · Social Entrepreneurship</div>
+        <div class="exp-role">Co-worker Engagement Coordinator</div>
+        <ul class="exp-bullets">
+          <li>Coordinate the end-to-end co-worker engagement pipeline for global social enterprise accelerator programmes — managing outreach, interviews, onboarding and support for IKEA employee mentors and coaches across 20+ countries.</li>
+          <li>Produce impact reports and follow-up documentation tracking co-worker experiences across programmes, supporting programme evaluation.</li>
+          <li>Develop presentations and stakeholder communications for a global social impact initiative operating across 20+ countries.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-meta">
+        <div class="exp-dates">Jan – Jun 2024</div>
+        <div class="exp-org">Stockholm Environment Institute</div>
+        <div class="exp-location">Stockholm, Sweden</div>
+      </div>
+      <div class="exp-content">
+        <div class="exp-type">Internship · Finance for Sustainable Development</div>
+        <div class="exp-role">Programme Support — Sustainability & Development Finance</div>
+        <ul class="exp-bullets">
+          <li>Co-designed and analysed a national survey with over 190 respondents on Swedish development research funding, synthesising findings for policy and research stakeholders.</li>
+          <li>Conducted market actor analysis for SIDA's Green Growth Fund, mapping sustainable finance instruments and private sector mechanisms.</li>
+          <li>Independently coordinated webinars and stakeholder outreach end-to-end: planning, logistics, communication and post-event follow-up.</li>
+          <li>Produced research reports, presentations and digital content translating complex sustainability findings for non-specialist audiences.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-meta">
+        <div class="exp-dates">Mar – Jun 2023</div>
+        <div class="exp-org">Danish Refugee Council HQ</div>
+        <div class="exp-location">Copenhagen, Denmark</div>
+      </div>
+      <div class="exp-content">
+        <div class="exp-type">Internship · Programme Platform Unit</div>
+        <div class="exp-role">Global Programme Support</div>
+        <ul class="exp-bullets">
+          <li>Supported compliance reporting across EU, Sida and ECHO funding streams, ensuring accuracy and deadline adherence across multiple institutional requirements.</li>
+          <li>Contributed to operationalising strategic frameworks across a network of 40+ country offices, translating policy into actionable regional guidance.</li>
+          <li>Developed internal governance and communication materials supporting cross-functional alignment across a geographically dispersed organisation.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-meta">
+        <div class="exp-dates">Feb – May 2023</div>
+        <div class="exp-org">180 Degrees Consulting</div>
+        <div class="exp-location">Lund, Sweden</div>
+      </div>
+      <div class="exp-content">
+        <div class="exp-type">Pro Bono Consulting</div>
+        <div class="exp-role">Project Leader — Irrigation Strategy for One Acre Fund, Rwanda</div>
+        <ul class="exp-bullets">
+          <li>Led a team of 5 consultants delivering an irrigation strategy for smallholder farmers in Rwanda, managing all workstreams, timelines and team accountability.</li>
+          <li>Evaluated 10 irrigation suppliers across East Africa and built profitability models for 8 drip systems under low- and high-yield scenarios.</li>
+          <li>Identified solar-powered drip irrigation as the only viable low-yield solution and delivered a 30-page strategy report to client leadership.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-meta">
+        <div class="exp-dates">Mar – Sep 2022</div>
+        <div class="exp-org">United Nations (UNMAS)</div>
+        <div class="exp-location">Geneva, Switzerland</div>
+      </div>
+      <div class="exp-content">
+        <div class="exp-type">Internship · Department of Peace Operations</div>
+        <div class="exp-role">Global Humanitarian Operations Support</div>
+        <ul class="exp-bullets">
+          <li>Coordinated the global rollout of a new organisational strategy across 18 countries, managing inputs from senior leadership and tracking implementation progress.</li>
+          <li>Assisted in organising a large-scale international event involving 700+ participants — overseeing logistics, communications and stakeholder coordination.</li>
+          <li>Drafted briefing notes, agendas and communication materials for high-level meetings with C-suite and international stakeholders.</li>
+          <li>Conducted policy research and data reporting in direct support of senior leadership decision-making.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-meta">
+        <div class="exp-dates">2018 – 2021</div>
+        <div class="exp-org">Café Grannen / YouCruit</div>
+        <div class="exp-location">Malmö, Sweden</div>
+      </div>
+      <div class="exp-content">
+        <div class="exp-type">Full-time</div>
+        <div class="exp-role">Operations & Account Management</div>
+        <ul class="exp-bullets">
+          <li>Promoted from barista to Assistant Manager at Café Grannen — responsible for scheduling, inventory, supplier coordination and daily operations.</li>
+          <li>Promoted from recruiter to B2B Account Manager at YouCruit within one year, managing full recruitment cycles and client relationships for a US-focused tech recruitment firm.</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="projects" id="projects">
+  <p class="section-label">Research & Projects</p>
+  <h2 class="section-title">Selected Work</h2>
+  <div class="projects-grid">
+    <div class="project-card">
+      <div class="project-tag">Policy Research · 2024</div>
+      <h3 class="project-title">Development Research Funding & Policy Impact</h3>
+      <p class="project-desc">National survey of 199 researchers, practitioners, and policymakers analysing the impact of Swedish government funding cuts on development research and international collaboration. Co-designed and led data collection, analysis and report production.</p>
+      <div class="project-org">Stockholm Environment Institute · SweDev</div>
+      <a class="project-link" href="https://swedev.dev/wp-content/uploads/2024/04/Version2_23_April_Final-draft_Report-for-SweDev.pdf" target="_blank">View report →</a>
+    </div>
+    <div class="project-card">
+      <div class="project-tag">Thesis Research · 2023 · Grade A</div>
+      <h3 class="project-title">Climate Risk, Water Security & Conflict Resilience in Yemen</h3>
+      <p class="project-desc">Applied research thesis analysing how climate change, water scarcity and armed conflict interact in Yemen, focusing on how extreme weather and resource stress amplify landmine risk and humanitarian operations. Recommended integrating climate adaptation into mine action strategy.</p>
+      <div class="project-org">Lund University · Development Studies</div>
+    </div>
+    <div class="project-card">
+      <div class="project-tag">Strategy Consulting · 2023</div>
+      <h3 class="project-title">Solar Irrigation Strategy — One Acre Fund, Rwanda</h3>
+      <p class="project-desc">Led a 5-person consulting team evaluating 10 irrigation suppliers across East Africa and building profitability models under low- and high-yield scenarios for smallholder farmers. Identified solar drip irrigation as the only financially viable low-yield solution.</p>
+      <div class="project-org">180 Degrees Consulting · Pro Bono</div>
+    </div>
+    <div class="project-card">
+      <div class="project-tag">Operations · 2022</div>
+      <h3 class="project-title">Global Strategy Rollout — 18 Countries</h3>
+      <p class="project-desc">Coordinated the global rollout of a new UNMAS organisational strategy across 18 countries, managing stakeholder inputs, tracking implementation progress, and supporting a 700+ participant international conference.</p>
+      <div class="project-org">United Nations Mine Action Service · Geneva</div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section class="education" id="education">
+  <p class="section-label">Academic Background</p>
+  <h2 class="section-title">Education</h2>
+  <div class="edu-grid">
+    <div class="edu-card">
+      <div class="edu-year">2023 – 2026</div>
+      <div class="edu-institution">Stockholm University</div>
+      <div class="edu-degree">MSc Globalization, Environment and Social Change — Human Geography, Climate Systems, ESG Governance, Sustainability Strategy</div>
+    </div>
+    <div class="edu-card">
+      <div class="edu-year">2024 · Exchange</div>
+      <div class="edu-institution">Ludwig Maximilian University of Munich</div>
+      <div class="edu-degree">Postgraduate Studies in Earth Sciences — Advanced Data Analysis, Environmental Systems Analysis, Applied Sustainability Assessment</div>
+    </div>
+    <div class="edu-card">
+      <div class="edu-year">2019 – 2023</div>
+      <div class="edu-institution">Lund University</div>
+      <div class="edu-degree">BSc Development Studies — Human Geography, Sociology, Political Science, Economic History</div>
+      <div class="edu-note">Dissertation Grade: A</div>
+    </div>
+    <div class="edu-card">
+      <div class="edu-year">2023 · Summer</div>
+      <div class="edu-institution">Stockholm University</div>
+      <div class="edu-degree">Energy and Security — Global energy systems, geopolitics, climate and security</div>
+    </div>
+    <div class="edu-card">
+      <div class="edu-year">2023 · Summer</div>
+      <div class="edu-institution">KTH Royal Institute of Technology</div>
+      <div class="edu-degree">Environmental Physics — Solar energy, carbon cycle, greenhouse effect, renewable energy</div>
+    </div>
+    <div class="edu-card">
+      <div class="edu-year">2014 · Scholarship</div>
+      <div class="edu-institution">University of Connecticut</div>
+      <div class="edu-degree">Diploma in Social Entrepreneurship</div>
+      <div class="edu-note">US Embassy competitive scholarship programme</div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="skills" id="skills">
+  <p class="section-label">Competencies</p>
+  <h2 class="section-title">Skills & Expertise</h2>
+  <div class="skills-grid">
+    <div class="skill-group">
+      <div class="skill-group-title">ESG & Sustainability</div>
+      <ul class="skill-list">
+        <li>ESG analysis & reporting</li>
+        <li>CSRD compliance</li>
+        <li>Sustainable finance</li>
+        <li>Impact measurement</li>
+        <li>Climate policy</li>
+        <li>Circular economy</li>
+      </ul>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">Research & Data</div>
+      <ul class="skill-list">
+        <li>Survey design & analysis</li>
+        <li>Policy analysis</li>
+        <li>Market research</li>
+        <li>Microsoft Excel</li>
+        <li>Data visualisation</li>
+        <li>Qualitative methods</li>
+      </ul>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">Project Delivery</div>
+      <ul class="skill-list">
+        <li>Stakeholder coordination</li>
+        <li>Strategy implementation</li>
+        <li>Compliance reporting</li>
+        <li>Event management</li>
+        <li>Vendor management</li>
+        <li>Process documentation</li>
+      </ul>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">Communication</div>
+      <ul class="skill-list">
+        <li>Executive reporting</li>
+        <li>Presentation development</li>
+        <li>Stakeholder engagement</li>
+        <li>Microsoft Office Suite</li>
+        <li>SharePoint</li>
+        <li>Cross-cultural communication</li>
+      </ul>
+    </div>
+  </div>
+
+  <p class="section-label" style="margin-bottom:0.8rem;">Languages</p>
+  <div class="lang-grid">
+    <div class="lang-card">
+      <div class="lang-name">English</div>
+      <div class="lang-level">Native proficiency</div>
+    </div>
+    <div class="lang-card">
+      <div class="lang-name">Arabic</div>
+      <div class="lang-level">Native proficiency</div>
+    </div>
+    <div class="lang-card">
+      <div class="lang-name">Swedish</div>
+      <div class="lang-level">Intermediate (B1)</div>
+    </div>
+    <div class="lang-card">
+      <div class="lang-name">German</div>
+      <div class="lang-level">Basic (A1)</div>
+    </div>
+  </div>
+</section>
+
+<!-- RECOMMENDATIONS -->
+<section class="recommendations">
+  <p class="section-label">Testimonials</p>
+  <h2 class="section-title">What colleagues say</h2>
+  <div class="rec-grid">
+    <div class="rec-card">
+      <p class="rec-quote">She impressed me with her to do attitude and professionalism. She is kind, dependable and multitalented — analytical skills, information management, political acumen and much more. A very impressive young woman with a bright future ahead of her.</p>
+      <div class="rec-author">Christelle Loupforest</div>
+      <div class="rec-role">UNMAS Representative in Geneva · Direct supervisor</div>
+    </div>
+    <div class="rec-card">
+      <p class="rec-quote">She brought a consistently positive attitude and was always keen to try new things. Curious and eager to learn, Amani took on tasks with enthusiasm and an open mind. Her excellent English and communication skills were a real asset to the team.</p>
+      <div class="rec-author">Carly Evaeus</div>
+      <div class="rec-role">Stockholm Environment Institute · Direct supervisor</div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section class="certifications">
+  <p class="section-label">Professional Development</p>
+  <h2 class="section-title">Certifications</h2>
+  <div class="cert-grid">
+    <div class="cert-card">
+      <div class="cert-icon"></div>
+      <div>
+        <div class="cert-name">ESG Disclosures & Compliance</div>
+        <div class="cert-issuer">LinkedIn · Jan 2026</div>
+      </div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon"></div>
+      <div>
+        <div class="cert-name">Understanding the Corporate Sustainability Reporting Directive (CSRD)</div>
+        <div class="cert-issuer">LinkedIn · Jan 2026</div>
+      </div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon"></div>
+      <div>
+        <div class="cert-name">Corporate Finance: Environmental, Social, and Governance (ESG)</div>
+        <div class="cert-issuer">LinkedIn · Jan 2026</div>
+      </div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon"></div>
+      <div>
+        <div class="cert-name">Circular Economy Business Strategies</div>
+        <div class="cert-issuer">LinkedIn · Jan 2026</div>
+      </div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon"></div>
+      <div>
+        <div class="cert-name">Sustainable & ESG Supply Chains</div>
+        <div class="cert-issuer">LinkedIn · Nov 2025</div>
+      </div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon"></div>
+      <div>
+        <div class="cert-name">Climate Justice & Sustainable Business Practices</div>
+        <div class="cert-issuer">LinkedIn · Jan 2026</div>
+      </div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon"></div>
+      <div>
+        <div class="cert-name">Transform Your Business through Sustainability and Climate Leadership</div>
+        <div class="cert-issuer">LinkedIn · Jan 2026</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-name">Amani Abdulqader</div>
+  <div class="footer-links">
+    <a href="mailto:amaniqader@hotmail.com">Email</a>
+    <a href="https://linkedin.com/in/amaniqader" target="_blank">LinkedIn</a>
+    <a href="tel:+46736407589">+46 73 640 7589</a>
+  </div>
+  <div class="footer-copy">Malmö, Sweden · 2026</div>
+</footer>
+
+</body>
+</html>
