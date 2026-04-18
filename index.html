@@ -497,64 +497,37 @@ footer{background:var(--t);padding:5rem 8rem;display:grid;grid-template-columns:
 </section>
 
 <!-- IMPACT -->
-<section class="impact" id="impact">
-  <div class="impact-header reveal">
-    <p class="impact-label">Impact at a glance</p>
-    <h2 class="impact-title">The numbers<br>behind the work</h2>
-  </div>
-  <div class="impact-grid reveal">
-    <div class="impact-card">
-      <div class="impact-num counter" data-target="18">0</div>
-      <div class="impact-desc">Countries in UN<br>Strategy Rollout</div>
-    </div>
-    <div class="impact-card">
-      <div class="impact-num">700<span style="font-size:2rem">+</span></div>
-      <div class="impact-desc">International Conference<br>Participants Managed</div>
-    </div>
-    <div class="impact-card">
-      <div class="impact-num">190<span style="font-size:2rem">+</span></div>
-      <div class="impact-desc">Survey Respondents<br>Analysed at SEI</div>
-    </div>
-    <div class="impact-card">
-      <div class="impact-num counter" data-target="40">0</div>
-      <div class="impact-num-suffix" style="font-size:2rem;color:var(--al)">+</div>
-      <div class="impact-desc">Country Offices<br>Supported at DRC</div>
-    </div>
-  </div>
-  <div class="impact-radials reveal">
-    <div class="radial-wrap">
-      <svg class="radial-svg" viewBox="0 0 110 110">
-        <circle cx="55" cy="55" r="44" fill="none" stroke="rgba(255,255,255,0.07)" stroke-width="7"/>
-        <circle class="rarc" cx="55" cy="55" r="44" fill="none" stroke="#E8B55A" stroke-width="7" stroke-linecap="round" stroke-dasharray="276" stroke-dashoffset="276" transform="rotate(-90 55 55)" data-v="243"/>
-        <text x="55" y="60" text-anchor="middle" fill="white" font-size="16" font-family="Playfair Display" font-weight="700">88%</text>
-      </svg>
-      <div class="radial-name">Stakeholder Management</div>
-    </div>
-    <div class="radial-wrap">
-      <svg class="radial-svg" viewBox="0 0 110 110">
-        <circle cx="55" cy="55" r="44" fill="none" stroke="rgba(255,255,255,0.07)" stroke-width="7"/>
-        <circle class="rarc" cx="55" cy="55" r="44" fill="none" stroke="#40916C" stroke-width="7" stroke-linecap="round" stroke-dasharray="276" stroke-dashoffset="276" transform="rotate(-90 55 55)" data-v="234"/>
-        <text x="55" y="60" text-anchor="middle" fill="white" font-size="16" font-family="Playfair Display" font-weight="700">85%</text>
-      </svg>
-      <div class="radial-name">ESG & Sustainability</div>
-    </div>
-    <div class="radial-wrap">
-      <svg class="radial-svg" viewBox="0 0 110 110">
-        <circle cx="55" cy="55" r="44" fill="none" stroke="rgba(255,255,255,0.07)" stroke-width="7"/>
-        <circle class="rarc" cx="55" cy="55" r="44" fill="none" stroke="#E8B55A" stroke-width="7" stroke-linecap="round" stroke-dasharray="276" stroke-dashoffset="276" transform="rotate(-90 55 55)" data-v="248"/>
-        <text x="55" y="60" text-anchor="middle" fill="white" font-size="16" font-family="Playfair Display" font-weight="700">90%</text>
-      </svg>
-      <div class="radial-name">Communication</div>
-    </div>
-    <div class="radial-wrap">
-      <svg class="radial-svg" viewBox="0 0 110 110">
-        <circle cx="55" cy="55" r="44" fill="none" stroke="rgba(255,255,255,0.07)" stroke-width="7"/>
-        <circle class="rarc" cx="55" cy="55" r="44" fill="none" stroke="#40916C" stroke-width="7" stroke-linecap="round" stroke-dasharray="276" stroke-dashoffset="276" transform="rotate(-90 55 55)" data-v="226"/>
-        <text x="55" y="60" text-anchor="middle" fill="white" font-size="16" font-family="Playfair Display" font-weight="700">82%</text>
-      </svg>
-      <div class="radial-name">Research & Analysis</div>
-    </div>
-  </div>
+.impact{background:var(--g);padding:6rem 8rem;}
+.impact-header{margin-bottom:4rem;}
+.impact-label{font-size:0.68rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--al);margin-bottom:0.6rem;font-weight:500;}
+.impact-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,3.5vw,3rem);font-weight:700;color:var(--tw);line-height:1.2;}
+.impact-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,0.06);}
+.impact-card{
+  padding:3rem 2rem;text-align:center;
+  background:rgba(255,255,255,0.03);
+  transition:background 0.2s;position:relative;overflow:hidden;
+}
+.impact-card:hover{background:rgba(255,255,255,0.07);}
+.impact-card::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:2px;
+  background:var(--au);transform:scaleX(0);transform-origin:center;
+  transition:transform 0.4s ease;
+}
+.impact-card:hover::after{transform:scaleX(1);}
+.impact-num{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(3rem,5vw,5rem);
+  font-weight:900;color:var(--al);
+  line-height:1;margin-bottom:0.6rem;
+}
+.impact-desc{font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.45);line-height:1.5;}
+.impact-radials{
+  margin-top:4rem;
+  display:grid;grid-template-columns:repeat(4,1fr);gap:3rem;
+}
+.radial-wrap{text-align:center;}
+.radial-svg{width:110px;height:110px;margin:0 auto 0.8rem;}
+.radial-name{font-size:0.73rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.55);}
 </section>
 
 <!-- EXPERIENCE -->
