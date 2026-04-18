@@ -319,6 +319,47 @@ nav{
 .edu-deg{font-size:0.82rem;color:rgba(255,255,255,0.5);line-height:1.6;font-weight:300;margin-bottom:0.7rem;}
 .edu-note{font-size:0.72rem;color:var(--al);font-style:italic;}
 
+/* CERTIFICATIONS */
+.certs{padding:7rem 8rem;background:var(--s);}
+.certs-label{font-size:0.68rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--au);margin-bottom:0.6rem;font-weight:500;}
+.certs-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,3.5vw,3rem);font-weight:700;color:var(--g);margin-bottom:3.5rem;}
+.certs-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;}
+.cert-card{
+  background:var(--tw);padding:1.8rem 2rem;
+  border-left:2px solid var(--gp);
+  transition:border-color 0.2s,transform 0.15s;
+}
+.cert-card:hover{border-left-color:var(--au);transform:translateX(4px);}
+.cert-name{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--g);line-height:1.35;margin-bottom:0.5rem;}
+.cert-meta{font-size:0.7rem;color:var(--tm);margin-bottom:0.7rem;}
+.cert-meta span{color:var(--au);font-weight:600;}
+.cert-skills{display:flex;flex-wrap:wrap;gap:0.35rem;}
+.cert-skill{
+  font-size:0.62rem;letter-spacing:0.08em;text-transform:uppercase;
+  color:var(--g);background:rgba(27,67,50,0.06);
+  padding:0.2rem 0.55rem;font-weight:500;
+}
+
+/* COURSEWORK */
+.coursework{padding:7rem 8rem;background:var(--sd);}
+.cw-label{font-size:0.68rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--au);margin-bottom:0.6rem;font-weight:500;}
+.cw-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,3.5vw,3rem);font-weight:700;color:var(--g);margin-bottom:3.5rem;}
+.cw-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:3rem;}
+.cw-group{}
+.cw-uni{
+  font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;
+  color:var(--g);font-weight:600;margin-bottom:1rem;padding-bottom:0.5rem;
+  border-bottom:1px solid rgba(27,67,50,0.12);
+}
+.cw-list{list-style:none;display:flex;flex-direction:column;gap:0;}
+.cw-list li{
+  font-size:0.78rem;color:var(--tm);line-height:1.45;font-weight:300;
+  padding:0.4rem 0;
+  border-bottom:1px solid rgba(27,67,50,0.04);
+  transition:color 0.15s,padding-left 0.15s;
+}
+.cw-list li:hover{color:var(--g);padding-left:0.4rem;}
+
 /* RECOMMENDATIONS */
 .recs{padding:7rem 8rem;background:var(--s);}
 .recs-label{font-size:0.68rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--au);margin-bottom:0.6rem;font-weight:500;}
@@ -360,11 +401,12 @@ footer{background:var(--t);padding:5rem 8rem;display:grid;grid-template-columns:
   .hero{grid-template-columns:1fr;}
   .hero-photo-side{height:380px;}
   .hero-text-side{padding:3rem 2rem;}
-  .signature,.impact,.experience,.skills,.projects,.education,.recs{padding:4rem 2rem;}
+  .signature,.impact,.experience,.skills,.projects,.education,.certs,.coursework,.recs{padding:4rem 2rem;}
   .signature{grid-template-columns:1fr;gap:3rem;}
   .impact-grid,.impact-radials,.edu-grid{grid-template-columns:1fr 1fr;}
   .exp-card{grid-template-columns:1fr;gap:0.5rem;}
-  .skills-layout,.proj-grid,.recs-grid{grid-template-columns:1fr;}
+  .skills-layout,.proj-grid,.recs-grid,.certs-grid{grid-template-columns:1fr;}
+  .cw-grid{grid-template-columns:1fr 1fr;}
   footer{grid-template-columns:1fr;padding:4rem 2rem;} .footer-right{align-items:flex-start;}
 }
 </style>
@@ -471,20 +513,20 @@ footer{background:var(--t);padding:5rem 8rem;display:grid;grid-template-columns:
   </div>
   <div class="impact-radials reveal">
     <div class="radial-wrap">
-      <div style="font-family:'Playfair Display',serif;font-size:2.8rem;font-weight:900;color:var(--al);line-height:1;margin-bottom:0.8rem;">United Nations Mine Action Service (UNMAS)</div>
-      <div class="radial-name" style="font-size:0.82rem;line-height:1.6;color:rgba(255,255,255,0.7);">Coordinated a global strategy rollout touching senior leadership across 18 countries</div>
+      <div style="font-family:'Playfair Display',serif;font-size:2.8rem;font-weight:900;color:var(--al);line-height:1;margin-bottom:0.8rem;">Unite Nations Mine Action Service</div>
+      <div class="radial-name" style="font-size:0.82rem;line-height:1.6;color:rgba(255,255,255,0.7);">COORDINATED A GLOBAL STRATEGY ROLLOUT TOUCHING SENIOR LEADERSHIP ACROSS 18 COUNTRIES</div>
     </div>
     <div class="radial-wrap">
-      <div style="font-family:'Playfair Display',serif;font-size:2.8rem;font-weight:900;color:var(--al);line-height:1;margin-bottom:0.8rem;">Stockholm Environment Institute (SEI)</div>
-      <div class="radial-name" style="font-size:0.82rem;line-height:1.6;color:rgba(255,255,255,0.7);">Designed and delivered a national research survey informing Swedish development policy</div>
+      <div style="font-family:'Playfair Display',serif;font-size:2.8rem;font-weight:900;color:var(--al);line-height:1;margin-bottom:0.8rem;">Stockholm Environment Institute</div>
+      <div class="radial-name" style="font-size:0.82rem;line-height:1.6;color:rgba(255,255,255,0.7);">DESIGNED AND DELIVERED A NATIONAL RESEARCH SURVEY INFORMING SWEDISH DEVELOPMENT POLICY</div>
     </div>
     <div class="radial-wrap">
-      <div style="font-family:'Playfair Display',serif;font-size:2.8rem;font-weight:900;color:var(--al);line-height:1;margin-bottom:0.8rem;">Danish Refugee Council (DRC)</div>
-      <div class="radial-name" style="font-size:0.82rem;line-height:1.6;color:rgba(255,255,255,0.7);">Supported compliance and operations across a network across global country offices</div>
+      <div style="font-family:'Playfair Display',serif;font-size:2.8rem;font-weight:900;color:var(--al);line-height:1;margin-bottom:0.8rem;">Danish Refugee Council</div>
+      <div class="radial-name" style="font-size:0.82rem;line-height:1.6;color:rgba(255,255,255,0.7);">SUPPORTED COMPLIANCE AND OPERATIONS ACROSS A NETWORK ACROSS GLOBAL COUNTRY OFFICES</div>
     </div>
     <div class="radial-wrap">
-      <div style="font-family:'Playfair Display',serif;font-size:2.8rem;font-weight:900;color:var(--al);line-height:1;margin-bottom:0.8rem;">Inter IKEA</div>
-      <div class="radial-name" style="font-size:0.82rem;line-height:1.6;color:rgba(255,255,255,0.7);">Coordinating co-worker engagement for social impact accelerator programmes and designing MEL reports</div>
+      <div style="font-family:'Playfair Display',serif;font-size:2.8rem;font-weight:900;color:var(--al);line-height:1;margin-bottom:0.8rem;">Inter IKEA B.V.</div>
+      <div class="radial-name" style="font-size:0.82rem;line-height:1.6;color:rgba(255,255,255,0.7);">COORDINATING CO-WORKER ENGAGEMENT FOR SOCIAL IMPACT ACCELERATOR PROGRAMMES AND DESIGNING MEL REPORTS</div>
     </div>
   </div>
 </section>
@@ -567,8 +609,8 @@ footer{background:var(--t);padding:5rem 8rem;display:grid;grid-template-columns:
         <div class="exp-loc">Lund, Sweden</div>
       </div>
       <div class="exp-body">
-        <div class="exp-type">Pro Bono Market Strategy Consulting</div>
-        <div class="exp-role">Project Leader — Irrigation Market Strategy, Rwanda</div>
+        <div class="exp-type">Pro Bono Strategy Consulting</div>
+        <div class="exp-role">Project Leader — Irrigation Strategy, Rwanda</div>
         <ul class="exp-bullets">
           <li>Led 5-person team; evaluated 10 suppliers across East Africa; identified solar drip as the only viable low-yield solution.</li>
         </ul>
@@ -647,7 +689,7 @@ footer{background:var(--t);padding:5rem 8rem;display:grid;grid-template-columns:
     <div class="proj-card">
       <div class="proj-card-num">03</div>
       <div class="proj-tag">Strategy Consulting · 2023</div>
-      <h3 class="proj-name">Solar Irrigation Market Strategy — One Acre Fund, Rwanda</h3>
+      <h3 class="proj-name">Solar Irrigation Strategy — One Acre Fund, Rwanda</h3>
       <p class="proj-desc">Led a 5-person team evaluating 10 irrigation suppliers across East Africa. Identified solar drip as the only financially viable low-yield solution for smallholder farmers.</p>
       <div class="proj-org">180 Degrees Consulting · Pro Bono</div>
     </div>
@@ -701,25 +743,7 @@ footer{background:var(--t);padding:5rem 8rem;display:grid;grid-template-columns:
   </div>
 </section>
 
-<!-- RECOMMENDATIONS -->
-<section class="recs">
-  <p class="recs-label">Testimonials</p>
-  <h2 class="recs-title reveal">What colleagues<br>say</h2>
-  <div class="recs-grid reveal">
-    <div class="rec-card">
-      <p class="rec-quote-text">She impressed me with her to do attitude and professionalism. She is kind, dependable and multitalented — analytical skills, information management, political acumen and much more. A very impressive young woman with a bright future ahead of her.</p>
-      <div class="rec-author">Christelle Loupforest</div>
-      <div class="rec-role">UNMAS Representative in Geneva · Direct supervisor</div>
-    </div>
-    <div class="rec-card">
-      <p class="rec-quote-text">She brought a consistently positive attitude and was always keen to try new things. Curious and eager to learn, Amani took on tasks with enthusiasm and an open mind. Her excellent English and communication skills were a real asset to the team.</p>
-      <div class="rec-author">Carly Evaeus</div>
-      <div class="rec-role">Stockholm Environment Institute · Direct supervisor</div>
-    </div>
-  </div>
-</section>
-
-  <!-- CERTIFICATIONS -->
+<!-- CERTIFICATIONS -->
 <section class="certs">
   <p class="certs-label">Professional Development</p>
   <h2 class="certs-title reveal">Licenses &<br>Certifications</h2>
@@ -761,7 +785,83 @@ footer{background:var(--t);padding:5rem 8rem;display:grid;grid-template-columns:
     </div>
   </div>
 </section>
- 
+
+<!-- COURSEWORK -->
+<section class="coursework">
+  <p class="cw-label">Academic Foundation</p>
+  <h2 class="cw-title reveal">Relevant<br>Coursework</h2>
+  <div class="cw-grid reveal">
+    <div class="cw-group">
+      <div class="cw-uni">Lund University</div>
+      <ul class="cw-list">
+        <li>Bachelor's Thesis in Development Studies</li>
+        <li>Development Cooperation in Practice</li>
+        <li>Development Policy in Practice</li>
+        <li>Development Theories</li>
+        <li>Development in a Historical Perspective</li>
+        <li>Field Work, Internship and Research Overview</li>
+        <li>International Migration and Development</li>
+        <li>Managing Sustainability, Society and Collective Behaviour</li>
+        <li>Sociology of Global Development and Sustainability</li>
+        <li>Sustainability Studies: Concepts, Challenges and Approaches</li>
+        <li>Research Methods in Development Studies</li>
+        <li>Theory of Science and Research Methods</li>
+        <li>Gender, Citizenship and Migration</li>
+        <li>Gender, Social Change and Modernity</li>
+        <li>Scandinavian Model of Equality</li>
+        <li>Diversity of the World's Languages</li>
+        <li>One World, One Morality</li>
+        <li>Religion and Politics</li>
+        <li>Religion and Sports</li>
+        <li>Education, Culture and Lifestyle in Sweden</li>
+        <li>Introduction to Scandinavian Culture and Society</li>
+      </ul>
+    </div>
+    <div class="cw-group">
+      <div class="cw-uni">Stockholm University</div>
+      <ul class="cw-list">
+        <li>Globalization, Environment and Social Change</li>
+        <li>Theory and Method in Globalization, Environment and Social Change</li>
+        <li>Global Climate and Environmental Change</li>
+        <li>Climate Change — An Interdisciplinary Perspective</li>
+        <li>Urbanization and Environment</li>
+        <li>Global Ethics</li>
+        <li>Inequality, Gender and Power in Latin America</li>
+        <li>Research Foundations in the Digitalization of Society</li>
+      </ul>
+    </div>
+    <div class="cw-group">
+      <div class="cw-uni">LMU Munich</div>
+      <ul class="cw-list">
+        <li>Advanced Data Analysis</li>
+        <li>Analysis of Environmental Systems</li>
+        <li>Applied Sustainability Assessment</li>
+        <li>Climate Change and Climate Impacts</li>
+        <li>Data Analysis and Uncertainty</li>
+        <li>Land Use and Land Use Conflicts</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- RECOMMENDATIONS -->
+<section class="recs">
+  <p class="recs-label">Testimonials</p>
+  <h2 class="recs-title reveal">What colleagues<br>say</h2>
+  <div class="recs-grid reveal">
+    <div class="rec-card">
+      <p class="rec-quote-text">She impressed me with her to do attitude and professionalism. She is kind, dependable and multitalented — analytical skills, information management, political acumen and much more. A very impressive young woman with a bright future ahead of her.</p>
+      <div class="rec-author">Christelle Loupforest</div>
+      <div class="rec-role">UNMAS Representative in Geneva · Direct supervisor</div>
+    </div>
+    <div class="rec-card">
+      <p class="rec-quote-text">She brought a consistently positive attitude and was always keen to try new things. Curious and eager to learn, Amani took on tasks with enthusiasm and an open mind. Her excellent English and communication skills were a real asset to the team.</p>
+      <div class="rec-author">Carly Evaeus</div>
+      <div class="rec-role">Stockholm Environment Institute · Direct supervisor</div>
+    </div>
+  </div>
+</section>
+
 <!-- FOOTER -->
 <footer id="contact">
   <div class="footer-left">
