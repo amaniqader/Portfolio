@@ -207,40 +207,50 @@ nav{
 .trait-title{font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--g);font-weight:600;margin-bottom:0.4rem;}
 .trait-desc{font-size:0.87rem;color:var(--tm);line-height:1.6;font-weight:300;}
  
-/* ═══════════════════════════════════════
-   IMPACT — BIG NUMBERS
-═══════════════════════════════════════ */
-.impact{background:var(--g);padding:6rem 8rem;}
-.impact-header{margin-bottom:4rem;}
-.impact-label{font-size:0.68rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--al);margin-bottom:0.6rem;font-weight:500;}
-.impact-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,3.5vw,3rem);font-weight:700;color:var(--tw);line-height:1.2;}
-.impact-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,0.06);}
-.impact-card{
-  padding:3rem 2rem;text-align:center;
-  background:rgba(255,255,255,0.03);
-  transition:background 0.2s;position:relative;overflow:hidden;
-}
-.impact-card:hover{background:rgba(255,255,255,0.07);}
-.impact-card::after{
-  content:'';position:absolute;bottom:0;left:0;right:0;height:2px;
-  background:var(--au);transform:scaleX(0);transform-origin:center;
-  transition:transform 0.4s ease;
-}
-.impact-card:hover::after{transform:scaleX(1);}
-.impact-num{
-  font-family:'Playfair Display',serif;
-  font-size:clamp(3rem,5vw,5rem);
-  font-weight:900;color:var(--al);
-  line-height:1;margin-bottom:0.6rem;
-}
-.impact-desc{font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.45);line-height:1.5;}
-.impact-radials{
-  margin-top:4rem;
-  display:grid;grid-template-columns:repeat(4,1fr);gap:3rem;
-}
-.radial-wrap{text-align:center;}
-.radial-svg{width:110px;height:110px;margin:0 auto 0.8rem;}
-.radial-name{font-size:0.73rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.55);}
+<!-- IMPACT -->
+<section class="impact" id="impact">
+  <div class="impact-header reveal">
+    <p class="impact-label">Impact at a glance</p>
+    <h2 class="impact-title">The numbers<br>behind the work</h2>
+  </div>
+  <div class="impact-grid reveal">
+    <div class="impact-card">
+      <div class="impact-num counter" data-target="18">0</div>
+      <div class="impact-desc">Countries in UN<br>Strategy Rollout</div>
+    </div>
+    <div class="impact-card">
+      <div class="impact-num">700<span style="font-size:2rem">+</span></div>
+      <div class="impact-desc">International Conference<br>Participants Managed</div>
+    </div>
+    <div class="impact-card">
+      <div class="impact-num">190<span style="font-size:2rem">+</span></div>
+      <div class="impact-desc">Survey Respondents<br>Analysed at SEI</div>
+    </div>
+    <div class="impact-card">
+      <div class="impact-num counter" data-target="40">0</div>
+      <div class="impact-num-suffix" style="font-size:2rem;color:var(--al)">+</div>
+      <div class="impact-desc">Country Offices<br>Supported at DRC</div>
+    </div>
+  </div>
+  <div class="impact-radials reveal">
+    <div class="radial-wrap">
+      <div style="font-family:'Playfair Display',serif;font-size:2.8rem;font-weight:900;color:var(--al);line-height:1;margin-bottom:0.8rem;">UN</div>
+      <div class="radial-name" style="font-size:0.82rem;line-height:1.6;color:rgba(255,255,255,0.7);">Coordinated a global strategy rollout touching senior leadership across 18 countries</div>
+    </div>
+    <div class="radial-wrap">
+      <div style="font-family:'Playfair Display',serif;font-size:2.8rem;font-weight:900;color:var(--al);line-height:1;margin-bottom:0.8rem;">SEI</div>
+      <div class="radial-name" style="font-size:0.82rem;line-height:1.6;color:rgba(255,255,255,0.7);">Designed and delivered a national research survey informing Swedish development policy</div>
+    </div>
+    <div class="radial-wrap">
+      <div style="font-family:'Playfair Display',serif;font-size:2.8rem;font-weight:900;color:var(--al);line-height:1;margin-bottom:0.8rem;">DRC</div>
+      <div class="radial-name" style="font-size:0.82rem;line-height:1.6;color:rgba(255,255,255,0.7);">Supported compliance and operations across a network spanning 40+ country offices</div>
+    </div>
+    <div class="radial-wrap">
+      <div style="font-family:'Playfair Display',serif;font-size:2.8rem;font-weight:900;color:var(--al);line-height:1;margin-bottom:0.8rem;">IKEA</div>
+      <div class="radial-name" style="font-size:0.82rem;line-height:1.6;color:rgba(255,255,255,0.7);">Coordinating co-worker engagement for accelerator programmes across 20+ countries</div>
+    </div>
+  </div>
+</section>
   
 /* ═══════════════════════════════════════
    EXPERIENCE — EDITORIAL CARDS
