@@ -162,6 +162,28 @@ nav{
 .rec-quote-text::before{content:'\201C';color:var(--au);font-size:1.8rem;line-height:0;vertical-align:-0.5rem;margin-right:0.2rem;}
 .rec-author{font-size:0.82rem;font-weight:600;color:var(--g);}
 .rec-role{font-size:0.72rem;color:var(--tm);margin-top:0.2rem;}
+
+/* ═══════════════════════════════════════
+   ROOTS SECTION
+═══════════════════════════════════════ */
+.roots{padding:7rem 8rem;background:var(--tw);}
+.roots-label{font-size:0.68rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--au);margin-bottom:0.6rem;font-weight:500;}
+.roots-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,3.5vw,3rem);font-weight:700;color:var(--g);margin-bottom:0.8rem;}
+.roots-intro{font-size:0.95rem;line-height:1.8;color:var(--tm);font-weight:300;max-width:700px;margin-bottom:3.5rem;}
+.roots-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:rgba(27,67,50,0.06);}
+.root-card{background:var(--tw);padding:2.5rem 2rem;position:relative;overflow:hidden;transition:background 0.2s;}
+.root-card:hover{background:var(--s);}
+.root-card::before{content:'';position:absolute;top:0;left:0;width:3px;height:0;background:var(--au);transition:height 0.4s ease;}
+.root-card:hover::before{height:100%;}
+.root-dates{font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--au);font-weight:600;margin-bottom:0.5rem;}
+.root-org{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:var(--g);margin-bottom:0.2rem;line-height:1.3;}
+.root-role{font-size:0.78rem;color:var(--tm);margin-bottom:0.2rem;}
+.root-loc{font-size:0.72rem;color:var(--tm);margin-bottom:1.2rem;font-style:italic;}
+.root-divider{width:32px;height:1px;background:var(--gp);margin-bottom:1.2rem;}
+.root-trait-label{font-size:0.62rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--au);font-weight:600;margin-bottom:0.3rem;}
+.root-trait-value{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--g);margin-bottom:0.5rem;line-height:1.3;}
+.root-desc{font-size:0.82rem;color:var(--tm);line-height:1.65;font-weight:300;}
+
 footer{background:var(--t);padding:5rem 8rem;display:grid;grid-template-columns:1fr auto;gap:4rem;align-items:center;}
 .footer-eyebrow{font-size:0.68rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--au);margin-bottom:1rem;font-weight:500;}
 .footer-name{font-family:'Playfair Display',serif;font-size:3rem;font-weight:900;color:var(--tw);margin-bottom:0.5rem;}
@@ -183,12 +205,15 @@ footer{background:var(--t);padding:5rem 8rem;display:grid;grid-template-columns:
   .hero{grid-template-columns:1fr;}
   .hero-photo-side{height:380px;}
   .hero-text-side{padding:3rem 2rem;}
-  .signature,.impact,.experience,.skills,.projects,.education,.certs,.recs{padding:4rem 2rem;}
+  .signature,.impact,.experience,.skills,.projects,.education,.certs,.recs,.roots{padding:4rem 2rem;}
   .signature{grid-template-columns:1fr;gap:3rem;}
   .impact-radials,.edu-grid{grid-template-columns:1fr 1fr;}
   .exp-card{grid-template-columns:1fr;gap:0.5rem;}
-  .skills-layout,.proj-grid,.recs-grid,.certs-grid{grid-template-columns:1fr;}
+  .skills-layout,.proj-grid,.recs-grid,.certs-grid,.roots-grid{grid-template-columns:1fr 1fr;}
   footer{grid-template-columns:1fr;padding:4rem 2rem;} .footer-right{align-items:flex-start;}
+}
+@media(max-width:600px){
+  .roots-grid{grid-template-columns:1fr;}
 }
 </style>
 </head>
@@ -226,12 +251,11 @@ footer{background:var(--t);padding:5rem 8rem;display:grid;grid-template-columns:
     </div>
   </div>
   <div class="hero-photo-side">
-    <img src="IMG_5944.jpeg" alt="Amani Abdulqader"/>
+    <img src="IMG_5944.jpg" alt="Amani Abdulqader"/>
     <div class="hero-photo-overlay"></div>
     <div class="hero-photo-badge">
       <div class="badge-title">What colleagues say</div>
-      <div class="badge-text">""Multitalented: analytical skills, information management, political acumen and much more."
-</div>
+      <div class="badge-text">"Multitalented: analytical skills, information management, political acumen and much more."</div>
       <div class="badge-author">— Christelle Loupforest, UNMAS Geneva</div>
     </div>
   </div>
@@ -248,7 +272,6 @@ footer{background:var(--t);padding:5rem 8rem;display:grid;grid-template-columns:
       to multiple countries where I experienced the <strong>UN, the Danish Refugee Council, the Stockholm 
       Environment Institute and now Inter IKEA Group</strong>, alongside degrees from <strong>four universities 
       across four countries</strong>. 
-      
       Every experience has taught me something different and something real about 
       how people organise in different contexts and how organisations operate; what brings people together 
       and what drives them apart. It showed me where coordination breaks down, and where communication leads 
@@ -331,7 +354,7 @@ footer{background:var(--t);padding:5rem 8rem;display:grid;grid-template-columns:
         <div class="exp-role">Co-worker Engagement Coordinator</div>
         <ul class="exp-bullets">
           <li>Coordinate co-worker engagement for global accelerator programmes across all ISEBV programme countries.</li>
-          <li>Design and produce impact reports tracking co-worker experiences and supporting programme Monetoring, Evaluation and Learning (MEL).</li>
+          <li>Design and produce impact reports tracking co-worker experiences and supporting programme Monitoring, Evaluation and Learning (MEL).</li>
         </ul>
       </div>
       <div class="exp-badge gold">Current</div>
@@ -400,7 +423,7 @@ footer{background:var(--t);padding:5rem 8rem;display:grid;grid-template-columns:
         </ul>
       </div>
       <div class="exp-badge">Consulting</div>
-    </div>    
+    </div>
     <div class="exp-card featured reveal">
       <div class="exp-meta">
         <div class="exp-dates">Sep 2018 – Jul 2019</div>
@@ -543,13 +566,13 @@ footer{background:var(--t);padding:5rem 8rem;display:grid;grid-template-columns:
       <div class="edu-inst">KTH Royal Institute of Technology</div>
       <div class="edu-deg">Environmental Physics — Solar energy, carbon cycle, renewable energy</div>
     </div>
-     <div class="edu-card">
+    <div class="edu-card">
       <div class="edu-year">2020 – 2023</div>
       <div class="edu-inst">Lund University</div>
       <div class="edu-deg">BSc Development Studies — Sociology, Political Science, Human Geography</div>
       <div class="edu-note">Dissertation Grade: A</div>
     </div>
-      <div class="edu-card">
+    <div class="edu-card">
       <div class="edu-year">2014 - 2016 · Scholarship</div>
       <div class="edu-inst">Lund University</div>
       <div class="edu-deg">Erasmus Mundus Joint Programme in Gender Studies</div>
@@ -631,6 +654,60 @@ footer{background:var(--t);padding:5rem 8rem;display:grid;grid-template-columns:
       <div class="rec-author">Carly Evaeus</div>
       <div class="rec-role">Stockholm Environment Institute · Direct supervisor</div>
     </div>
+  </div>
+</section>
+
+<!-- ROOTS SECTION -->
+<section class="roots" id="roots">
+  <p class="roots-label">The full picture</p>
+  <h2 class="roots-title reveal">Roots</h2>
+  <p class="roots-intro reveal">These are not the roles that define my career path — but they are the ones that shaped who I am. Every one of them taught me something I still carry.</p>
+  <div class="roots-grid reveal">
+
+    <div class="root-card">
+      <div class="root-dates">02/2019 – 02/2021</div>
+      <div class="root-org">Café Grannen</div>
+      <div class="root-role">Barista → Assistant Manager</div>
+      <div class="root-loc">Malmö, Sweden</div>
+      <div class="root-divider"></div>
+      <div class="root-trait-label">What it built</div>
+      <div class="root-trait-value">Reliability & ownership</div>
+      <div class="root-desc">I showed up, I was trusted with more, and I delivered. Promoted to Assistant Manager based on work ethic and the ability to take responsibility.</div>
+    </div>
+
+    <div class="root-card">
+      <div class="root-dates">01/2025 – 03/2025</div>
+      <div class="root-org">Café Blá</div>
+      <div class="root-role">Kitchen & Service Staff</div>
+      <div class="root-loc">Munich, Germany</div>
+      <div class="root-divider"></div>
+      <div class="root-trait-label">What it built</div>
+      <div class="root-trait-value">Adaptability</div>
+      <div class="root-desc">I moved to a new country mid-degree and found my footing quickly — new language, new team, new environment. I showed up and made it work.</div>
+    </div>
+
+    <div class="root-card">
+      <div class="root-dates">09/2008 – 06/2009</div>
+      <div class="root-org">Sana'a Grammar School</div>
+      <div class="root-role">English Teacher</div>
+      <div class="root-loc">Sana'a, Yemen</div>
+      <div class="root-divider"></div>
+      <div class="root-trait-label">What it built</div>
+      <div class="root-trait-value">Patience & care</div>
+      <div class="root-desc">Teaching young children in a difficult environment taught me to meet people exactly where they are — a principle I carry into every professional context.</div>
+    </div>
+
+    <div class="root-card">
+      <div class="root-dates">01/2013 – 08/2013</div>
+      <div class="root-org">Seeds Language Institute</div>
+      <div class="root-role">ESL Instructor</div>
+      <div class="root-loc">Sana'a, Yemen</div>
+      <div class="root-divider"></div>
+      <div class="root-trait-label">What it built</div>
+      <div class="root-trait-value">Communication</div>
+      <div class="root-desc">Explaining complex ideas simply, across levels and backgrounds, is a skill I still use every day — in briefings, reports, and every stakeholder conversation.</div>
+    </div>
+
   </div>
 </section>
 
