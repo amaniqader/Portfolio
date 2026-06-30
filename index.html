@@ -109,6 +109,7 @@ nav{
 .proj-grid{display:grid;grid-template-columns:1fr 1fr;gap:3px;}
 .proj-card{padding:3rem;position:relative;overflow:hidden;cursor:default;transition:transform 0.2s;}
 .proj-card:hover{transform:scale(1.01);}
+.proj-card-wide{grid-column:1 / -1;}
 .proj-card:nth-child(1){background:var(--g);}
 .proj-card:nth-child(2){background:var(--sd);}
 .proj-card:nth-child(3){background:var(--sd);}
@@ -513,6 +514,14 @@ footer{background:var(--t);padding:5rem 8rem;display:grid;grid-template-columns:
   <p class="proj-label">Research & Projects</p>
   <h2 class="proj-title reveal">Selected Work</h2>
   <div class="proj-grid reveal">
+    <div class="proj-card proj-card-wide">
+      <div class="proj-card-num">00</div>
+      <div class="proj-tag">Master's Thesis · 2026</div>
+      <h3 class="proj-name">Disaggregating the Green Metric: A GIS-Based Analysis of Green Infrastructure Equity in Copenhagen and its Implications for Urban Sustainability Reporting</h3>
+      <p class="proj-desc">GIS-based study of how ecological and recreational greenspace in Copenhagen intersects with income distribution and urban environmental equity. Introduces a "floor and ceiling" framework to evaluate minimum and maximum greenspace thresholds across neighbourhoods, showing that the presence of greenspace does not automatically translate into equitable environmental benefit.</p>
+      <div class="proj-org">Stockholm University · Dept. of Physical Geography & Dept. of Human Geography</div>
+      <a class="proj-link" href="https://su.diva-portal.org/smash/record.jsf?pid=diva2%3A2067251&dswid=3019" target="_blank">View thesis →</a>
+    </div>
     <div class="proj-card">
       <div class="proj-card-num">01</div>
       <div class="proj-tag">Policy Research · 2024</div>
